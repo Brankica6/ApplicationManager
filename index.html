@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudentsApplication</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="main">
+  <div class="header">
+    <div class="con-btn">
+      <button class="btn-h active" id="add">Add new student</button>
+      <button class="btn-h" id="btshow">Student List</button>
+    </div>
+  </div>
+  <div class="wrapper" id="con">
+    <form class="form" id="form" onsubmit="return Validate(event)">
+      <h2>Student Application Form</h2>
+      <div class="form-group-1">
+        <input type="text" name="name" id="name" placeholder="Your Name" required />
+        <input type="email" name="email" id="email" placeholder="Email" required />
+        <input type="number" name="age" id="age" placeholder="Age"  required />
+        <input type="text" name="phone_number" id="phone_number" placeholder="Phone Number (format: xxx-xxx-xxxx)" pattern="^\d{3}-\d{3}-\d{4}$" required />
+        <p>Preferred way of communication</p>
+        <div class="form-check">
+          <label for="agree-term">Email</label>
+          <input type="radio" name="agree-term" id="agree-term" class="email-term" required/>
+          <label for="agree-term1">Phone</label>
+          <input type="radio" name="agree-term" id="agree-term1" class="phone-term"/>
+        </div>
+        <div class="select-list">
+          <label for="en-level" class="bold">English level:</label>
+          <select name="en-level" id="en-level" required>
+            <option value="beginner">beginner</option>
+            <option value="society">intermediate</option>
+            <option value="language">advanced</option>
+          </select>
+        </div>
+        <p>Available to start</p>
+        <input type="date" name="date" id="date" required />
+        <p>Technical skills and Courses</p>
+        <input type="text" name="skills" id="skills" placeholder="Your Skills" required />
+        <p>Tell something about yourself</p>
+        <input type="text" name="description" id="description" placeholder="description" required />
+        <div>
+          <label class="bold">Study from home<input type="checkbox" name="chek" id="home"/></label>
+        </div>
+
+      </div>
+
+      <div class="form-submit">
+        <input type="submit" name="submit" id="submit" class="btn" value="Save"/>
+      </div>
+    </form>
+  </div>
+  <div class="wrapper-show">
+    <h1>Table of students</h1>
+    <div class="showop" id="show">
+    </div>
+  </div>
+</div>
+
+<div class="modal">
+    <div class="modal-content">
+        <span class="close-button">×</span>
+        <label>Name</label>
+        <input type="text" id='ch-name'/>
+        <label>Email</label>
+        <input type="email" id='ch-email'/>
+        <label>Age</label>
+        <input type="text" id='ch-age'/>
+        <label>Phone number</label>
+        <input type="number" id='ch-phone'/>
+        <button class="btn-modal blue" id = 'change' type="submit">Save</button>
+        <button class="btn-modal red" id = 'cancel' type="submit">Cancel</button>
+    </div>
+</div>
+
+
+<script src="js/app.js"></script>
+
+
+</body>
+</html>
